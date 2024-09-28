@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.12.4 on win32)" generated="2024-09-29T01:42:52.832394" rpa="false" schemaversion="5">
+<suite id="s1" name="Robot Test" source="C:\Users\boomz\OneDrive\เดสก์ท็อป\testsoft\ExamRobot\robot_test.robot">
+<test id="s1-t1" name="Check true_when_x_is_17" line="8">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2024-09-29T01:42:53.541176" level="INFO">Creating Session using : alias=mysession, url=http://127.0.0.1:8000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>mysession</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2024-09-29T01:42:53.541176" elapsed="0.000000"/>
+</kw>
+<kw name="GET On Session" owner="RequestsLibrary">
+<msg time="2024-09-29T01:42:55.547807" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000277CC5F8EC0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /is_prime/17</msg>
+<msg time="2024-09-29T01:42:57.752174" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000277CC5F9220&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /is_prime/17</msg>
+<var>${response}</var>
+<arg>mysession</arg>
+<arg>/is_prime/17</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<status status="FAIL" start="2024-09-29T01:42:53.542163" elapsed="6.214695">Execution terminated by signal</status>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${'True'}</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="NOT RUN" start="2024-09-29T01:42:59.757827" elapsed="0.000000"/>
+</kw>
+<doc>Verify that 17 is a prime number</doc>
+<status status="FAIL" start="2024-09-29T01:42:53.539650" elapsed="6.218177">Execution terminated by signal</status>
+</test>
+<test id="s1-t2" name="Check false_when_x_is_36" line="14">
+<doc>Verify that 36 is not a prime number</doc>
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-29T01:42:59.759333" elapsed="0.000988">Test execution stopped due to a fatal error.</status>
+</test>
+<test id="s1-t3" name="Check true_when_x_is_13219" line="20">
+<doc>Verify that 13219 is a prime number</doc>
+<tag>robot:exit</tag>
+<status status="FAIL" start="2024-09-29T01:42:59.761297" elapsed="0.001510">Test execution stopped due to a fatal error.</status>
+</test>
+<status status="FAIL" start="2024-09-29T01:42:52.834348" elapsed="6.929973"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="3" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="0" fail="1" skip="0" info="combined" combined="NOT robot:exit">NOT robot:exit</stat>
+</tag>
+<suite>
+<stat pass="0" fail="3" skip="0" id="s1" name="Robot Test">Robot Test</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-09-29T01:42:55.547807" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000277CC5F8EC0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /is_prime/17</msg>
+<msg time="2024-09-29T01:42:57.752174" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000277CC5F9220&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /is_prime/17</msg>
+</errors>
+</robot>
